@@ -1,0 +1,33 @@
+﻿@model ArchivoSys.Domain.Province
+
+@{
+    ViewBag.Title = "Eliminar " + Model.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>¿Estás seguro(a) de que quieres eliminar este registro?</h3>
+<div>
+    <h4>Province</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

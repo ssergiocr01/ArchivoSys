@@ -1,0 +1,102 @@
+﻿@model ArchivoSys.Domain.Province
+
+<link href="~/Content/DataTables/datatables.min.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Detalles de " + Model.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProvinceId }, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Crear Cantón", "CreateCanton", new { id = Model.ProvinceId }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-success" })
+</p>
+
+<h4>Cantones</h4>
+
+@if (Model.Cantons.Count == 0)
+{
+    <h5>No tiene cantones registrados</h5>
+}
+else
+{
+    <table class="table table-responsive" id="cantonsTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cantons.FirstOrDefault().Name)
+                </th>                
+                <th>Opciones</th>
+            </tr>            
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Cantons.OrderBy(c => c.CantonId))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>                    
+                    <td>
+                        @Html.ActionLink("Editar", "EditCanton", new { id = item.CantonId }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Detalles", "DetailsCanton", new { id = item.CantonId }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Eliminar", "DeleteCanton", new { id = item.CantonId }, new { @class = "btn btn-danger", onclick = "return confirm('Está seguro(a) de eliminar este registro')" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+
+    </table>
+}
+
+@section Scripts{
+
+    <script src="~/Content/DataTables/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#cantonsTable').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+        });
+    </script>
+}

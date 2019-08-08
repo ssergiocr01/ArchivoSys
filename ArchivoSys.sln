@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchivoSys.Web", "ArchivoSys.Web\ArchivoSys.Web.csproj", "{0A52D878-CA42-4B56-B0DB-5BA833EE53F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchivoSys.Domain", "ArchivoSys.Domain\ArchivoSys.Domain.csproj", "{170EEBF9-A8AF-434B-864B-6231F4FED7FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A52D878-CA42-4B56-B0DB-5BA833EE53F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A52D878-CA42-4B56-B0DB-5BA833EE53F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A52D878-CA42-4B56-B0DB-5BA833EE53F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A52D878-CA42-4B56-B0DB-5BA833EE53F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170EEBF9-A8AF-434B-864B-6231F4FED7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170EEBF9-A8AF-434B-864B-6231F4FED7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170EEBF9-A8AF-434B-864B-6231F4FED7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170EEBF9-A8AF-434B-864B-6231F4FED7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1712A5D-BD69-4FC3-BD1D-C5F816650E9F}
+	EndGlobalSection
+EndGlobal
